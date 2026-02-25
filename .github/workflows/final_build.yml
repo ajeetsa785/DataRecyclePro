@@ -1,18 +1,17 @@
 name: Build
-on: [push]
+on: push
 jobs:
-  android:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build
+      - name: Run Build
         uses: ArtemSerebryakov/buildozer-action@v1
         with:
           buildozer_version: master
           python_version: 3.10
-      - name: Upload
+      - name: Save APK
         uses: actions/upload-artifact@v2
         with:
-          name: APK
+          name: DataRecyclePro-Package
           path: bin/*.apk
-          
