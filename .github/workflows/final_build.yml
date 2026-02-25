@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
 jobs:
-  android:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,4 +17,3 @@ jobs:
         with:
           name: DataRecycle-APK
           path: bin/*.apk
-          
