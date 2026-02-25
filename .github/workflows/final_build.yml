@@ -2,16 +2,16 @@ name: Build
 on: [push, workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build with Buildozer
-        uses: kivy/buildozer-action@v1.5.0
+        uses: kivy/buildozer-action@v1.7.0
         with:
           buildozer_version: master
-          python_version: 3.10
+          python_version: 3.11
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: DataRecycle-APK
           path: bin/*.apk
